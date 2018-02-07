@@ -67,7 +67,7 @@
         PathFtpBat = "c:\testFtp\testbat2.bat"   '"c:\testFtp\test1.txt"
         IO.File.WriteAllLines(PathFtpBat, ComSFT)
         If IO.File.Exists(PathFtpBat) Then
-            MsgBox("Ghjjjj jjjj")
+            MsgBox(String.Format("Create bat fail {0}", PathFtpBat))
 
         End If
 
@@ -93,20 +93,20 @@ Public Class CreateBatFile
         'PathFtp = "c:\testFtp\test1.txt"
         'PathArh = "c:\testFtp\arh\%sdat%.txt"
 
-        ComSFT(0) = "@echo Off"
+        ComSFT(0) = "@echo On"
         ComSFT(1) = "set " & dcav & "sdat=%date% %time~0,-3%" & dcav
-        ComSFT(2) = "set " & dcav & "sdat=%date% %time~0,-3%" & dcav
-        ComSFT(3) = "set " & dcav & "sdat=%sdat:=.%" & dcav
-        ComSFT(4) = "set " & dcav & "sdat=%" & "sdat:=_%" & dcav
-        ComSFT(5) = "copy /-y " & _PathFtp & " " & _PathArh   'c:\testFtp\test1.txt c:\testFtp\arh\%sdat%.txt
+        ComSFT(2) = "" '"set " & dcav & "sdat=%date% %time~0,-3%" & dcav
+        ComSFT(3) = "set " & dcav & "sdat=%sdat::=.%" & dcav
+        ComSFT(4) = "set " & dcav & "sdat=%" & "sdat: =_%" & dcav
+        ComSFT(5) = "copy /-y " & _PathFtp & "\" & _NameFile & " " & _PathArh   'c:\testFtp\test1.txt c:\testFtp\arh\%sdat%.txt
         ComSFT(6) = dcav & "C:\Program Files (x86)\WinSCP\WinSCP.com" & dcav & "^"
-        ComSFT(7) = "/log=" & dcav & _PathLog & dcav & " /ini=nul ^" '"C:\Program Files (x86)\WinSCP\WinSCP1.log
-        ComSFT(8) = "/command ^"
+        ComSFT(7) = "  /log=" & dcav & _PathLog & dcav & " /ini=nul ^" '"C:\Program Files (x86)\WinSCP\WinSCP1.log
+        ComSFT(8) = "  /command ^"
         'ComSFT(9) = dcav & "open sftp://prog:3RBkJLzW@spb.root.autocrm.ru:14872/ -hostkey=" & dcav & dcav & "ssh-rsa 2048 30:31:44:d4:00:2c:f3:7d:70:09:83:58:68:c9:68:c8" & dcav & dcav & & dcav "^"
-        ComSFT(9) = dcav & "open sftp://" & _login & ":" & _password & "@" & _server & ":" & _port & "/ -hostkey=" & dcav & dcav & _hostkey & dcav & dcav & dcav & "^"
-        ComSFT(10) = dcav & "lcd " & _PathFtp & dcav & "^"
-        ComSFT(11) = dcav & "put " & _NameFile & dcav & "^"
-        ComSFT(12) = dcav & "exit" & dcav
+        ComSFT(9) = "    " & dcav & "open sftp://" & _login & ":" & _password & "@" & _server & ":" & _port & "/ -hostkey=" & dcav & dcav & _hostkey & dcav & dcav & dcav & " ^"
+        ComSFT(10) = "    " & dcav & "lcd " & _PathFtp & dcav & " ^"
+        ComSFT(11) = "    " & dcav & "put " & _NameFile & dcav & " ^"
+        ComSFT(12) = "    " & dcav & "exit" & dcav
         ComSFT(13) = ""
         ComSFT(14) = "set WINSCP_RESULT=%ERRORLEVEL%"
         ComSFT(15) = "If %WINSCP_RESULT% equ 0 ( echo Success ) Else ( echo Error )"
