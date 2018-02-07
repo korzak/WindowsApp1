@@ -98,7 +98,7 @@ Public Class CreateBatFile
         ComSFT(2) = "" '"set " & dcav & "sdat=%date% %time~0,-3%" & dcav
         ComSFT(3) = "set " & dcav & "sdat=%sdat::=.%" & dcav
         ComSFT(4) = "set " & dcav & "sdat=%" & "sdat: =_%" & dcav
-        ComSFT(5) = "copy /-y " & _PathFtp & "\" & _NameFile & " " & _PathArh   'c:\testFtp\test1.txt c:\testFtp\arh\%sdat%.txt
+        ComSFT(5) = "copy /y " & _PathFtp & "\" & _NameFile & " " & _PathArh   'c:\testFtp\test1.txt c:\testFtp\arh\%sdat%.txt
         ComSFT(6) = dcav & "C:\Program Files (x86)\WinSCP\WinSCP.com" & dcav & "^"
         ComSFT(7) = "  /log=" & dcav & _PathLog & dcav & " /ini=nul ^" '"C:\Program Files (x86)\WinSCP\WinSCP1.log
         ComSFT(8) = "  /command ^"
