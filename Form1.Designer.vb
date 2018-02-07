@@ -31,7 +31,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(675, 533)
+        Me.Button1.Location = New System.Drawing.Point(604, 388)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(103, 27)
         Me.Button1.TabIndex = 0
@@ -56,13 +56,13 @@ Partial Class Form1
         '
         Me.RichTextBox1.Location = New System.Drawing.Point(43, 111)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(717, 361)
+        Me.RichTextBox1.Size = New System.Drawing.Size(664, 259)
         Me.RichTextBox1.TabIndex = 3
         Me.RichTextBox1.Text = ""
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(536, 534)
+        Me.Button2.Location = New System.Drawing.Point(465, 389)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(122, 25)
         Me.Button2.TabIndex = 4
@@ -73,7 +73,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(819, 584)
+        Me.ClientSize = New System.Drawing.Size(804, 418)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.TextBox2)

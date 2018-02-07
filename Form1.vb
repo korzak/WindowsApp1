@@ -1,9 +1,10 @@
 ﻿Public Class Form1
+    Dim ComSFT(16) As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim ComSFT(16) As String
-        Dim PathFtp, PathArh, Str1, NameFile, PathLog, login, password, server, port, hostkey As String
+
+        Dim PathFtp, PathArh, NameFile, PathLog, login, password, server, port, hostkey As String
         'Const pr As Char = "%"
-        Const dcav As Char = Chr(34)
+        'Const dcav As Char = Chr(34)
 
         PathFtp = "c:\testFtp"   '"c:\testFtp\test1.txt"
         NameFile = "test1.txt"
@@ -58,6 +59,17 @@
         Next
 
 
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim PathFtpBat As String
+        PathFtpBat = "c:\testFtp\testbat2.bat"   '"c:\testFtp\test1.txt"
+        IO.File.WriteAllLines(PathFtpBat, ComSFT)
+        If IO.File.Exists(PathFtpBat) Then
+            MsgBox("Ghjjjj jjjj")
+
+        End If
 
     End Sub
 End Class
